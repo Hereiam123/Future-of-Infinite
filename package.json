@@ -16,5 +16,8 @@
     "node-fetch": "^2.3.0",
     "universal-config": "^0.3.0",
     "unsplash-js": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
