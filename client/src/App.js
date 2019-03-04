@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
+import Images from "./components/Images";
 
 class App extends Component {
   render() {
     return (
       <div id="root">
-        <div class="hero is-fullheight is-bold is-info">
-          <div class="hero-body">
-            <div class="container">
-              <div class="header content">
-                <h2 class="subtitle is-6">Infinite!</h2>
+        <div className="hero is-fullheight is-bold is-info">
+          <div className="hero-body">
+            <div className="container">
+              <div className="header content">
+                <h2 className="subtitle is-6">Infinite!</h2>
+                <h1 className="title is-1">Scroll some Images</h1>
               </div>
-              <div class="images" />
+              <Images />
             </div>
           </div>
         </div>
