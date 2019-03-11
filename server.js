@@ -6,9 +6,9 @@ const express = require("express");
 const path = require("path");
 
 const unsplash = new Unsplash({
-  applicationId: config.get("APPLICATION_ID") || APPLICATION_ID,
-  secret: config.get("SECRET") || SECRET,
-  callbackUrl: config.get("CALLBACK_URL") || CALLBACK_URL
+  applicationId: config.get("APPLICATION_ID") || process.env.APPLICATION_ID,
+  secret: config.get("SECRET") || process.env.SECRET,
+  callbackUrl: config.get("CALLBACK_URL") || process.env.CALLBACK_URL
 });
 
 console.log(APPLICATION_ID + "is here?");
