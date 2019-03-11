@@ -11,6 +11,8 @@ const unsplash = new Unsplash({
   callbackUrl: config.get("CALLBACK_URL") || process.env.CALLBACK_URL
 });
 
+console.log(process.env.APPLICATION_ID + "app ID");
+
 const app = express();
 
 app.use(express.static(`${__dirname}/../build`));
