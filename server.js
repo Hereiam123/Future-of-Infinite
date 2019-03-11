@@ -3,24 +3,14 @@ const config = require("universal-config");
 const Unsplash = require("unsplash-js").default;
 const toJson = require("unsplash-js").toJson;
 const express = require("express");
-const path = require("path");
 
 const unsplash = new Unsplash({
-  applicationId: config.get("APPLICATION_ID") || process.env.APPLICATION_ID,
-  secret: config.get("SECRET") || process.env.SECRET,
-  callbackUrl: config.get("CALLBACK_URL") || process.env.CALLBACK_URL
+  applicationId: config.get("APPLICATION_ID"),
+  secret: config.get("SECRET"),
+  callbackUrl: config.get("CALLBACK_URL")
 });
-
-console.log(process.env.APPLICATION_ID + "app ID");
 
 const app = express();
-
-app.use(express.static(`${__dirname}/../build`));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-  console.log("Alve!");
-});
 
 app.get("/api/photos", (req, res) => {
   unsplash.photos
