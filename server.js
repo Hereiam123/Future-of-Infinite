@@ -6,10 +6,12 @@ const express = require("express");
 const path = require("path");
 
 const unsplash = new Unsplash({
-  applicationId: config.get("APPLICATION_ID"),
-  secret: config.get("SECRET"),
-  callbackUrl: config.get("CALLBACK_URL")
+  applicationId: config.get("APPLICATION_ID") || APPLICATION_ID,
+  secret: config.get("SECRET") || SECRET,
+  callbackUrl: config.get("CALLBACK_URL") || CALLBACK_URL
 });
+
+console.log(APPLICATION_ID + "is here?");
 
 const app = express();
 
@@ -17,6 +19,7 @@ app.use(express.static(`${__dirname}/../build`));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
+  console.log("Alve!");
 });
 
 app.get("/api/photos", (req, res) => {
