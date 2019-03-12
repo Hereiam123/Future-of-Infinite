@@ -13,6 +13,8 @@ const unsplash = new Unsplash({
 
 const app = express();
 
+app.use(express.static("build"));
+
 app.get("/api/photos", (req, res) => {
   unsplash.photos
     .listPhotos(req.query.start, req.query.count)
