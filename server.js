@@ -13,7 +13,7 @@ const unsplash = new Unsplash({
 
 const app = express();
 
-app.use(express.static("build"));
+app.use(express.static("/client/build"));
 
 app.get("/api/photos", (req, res) => {
   unsplash.photos
